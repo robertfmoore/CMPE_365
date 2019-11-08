@@ -1,0 +1,6 @@
+Answer the following question:
+Do your observations support the theoretical predictions that BFI_Subset_Sum is in.
+O(2^n) and HS_Subset_Sum is in O(n*2^(n/2))
+
+Answer:
+My observations do support the theoretical preditions that the BFI Subset sum is in O(2^n) since we can see on the plot in part2 that after n=12 the observed operations for BFI drops beneath the theoretical big O. This implies that as n approaches infinity the ratio would converge to some constant. Similarily, my observations also support the theoretical preditions that the horowitz and Sahni Subset sum algorithm is in O(n*2^(n/2)) since for all values of n it appears on the plot in part2 that the observed operations is less than the theoretical upper bound. Again this implies that the ratio between these two would converge to a constant as n approaches inifinity.

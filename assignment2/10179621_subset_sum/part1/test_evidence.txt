@@ -1,0 +1,25 @@
+target value is in set:
+
+  python3 part1/subset_sum.py --target 5 --list 3 5 3 9 18 4 5 6
+  BFI found : [5]
+  Horowitz & Sahni found : [5]
+
+
+target value is subset of set:
+
+  python3 part1/subset_sum.py --target 28 --list 3 5 3 9 18 4 5 6
+  BFI found : [3, 3, 18, 4]
+  Horowitz & Sahni found : [18, 4, 6]
+
+
+target value is sum of entire set:
+
+  python3 part1/subset_sum.py --target 53 --list 3 5 3 9 18 4 5 6
+  BFI found : [3, 5, 3, 9, 18, 4, 5, 6]
+  Horowitz & Sahni found : [3, 5, 3, 9, 18, 4, 5, 6]
+
+target value is not possible:
+
+  python3 part1/subset_sum.py --target 52 --list 3 5 3 9 18 4 5 6
+  BFI found : no subset sums to target value
+  Horowitz & Sahni found : no subset sums to target value

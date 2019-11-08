@@ -1,0 +1,10 @@
+----------------------------
+Optimal route from 21 to 96 :
+
+Fly from 21 to 49
+Fly from 49 to 101
+Fly from 101 to 166
+Fly from 166 to 96
+
+Arrive at 96 at time 20
+----------------------------
