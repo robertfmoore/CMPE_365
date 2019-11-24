@@ -7,24 +7,27 @@ I certify that this submission contains my own work, except as noted.
 """
 import argparse
 import numpy as np
+from os.path import join
 #np.set_printoptions(threshold=np.inf)
 
 def main():
     """executes encoding given user specifications."""
     parser = argparse.ArgumentParser(description='Use LCS algorithm to find the difference between two files.')
-    parser.add_argument('-f1','--file1', type=str, help='path to file 1', required=True)
-    parser.add_argument('-f2','--file2', type=str, help='path to file 2', required=True)
-    #parser.add_argument('-o','--out_file', type=str, help='save encoded file', required=True)
+    parser.add_argument('-p', '--path', type=str, help='folder containing files', required=True)
+    parser.add_argument('-f1','--file1', type=str, help='name of file 1', required=True)
+    parser.add_argument('-f2','--file2', type=str, help='name of file 2', required=True)
     args = parser.parse_args()
 
-    file1 = load_files(args.file1)
-    file2 = load_files(args.file2)
+    file1 = load_files(join(args.path,args.file1))
+    file2 = load_files(join(args.path,args.file2))
 
     lcsl_matrix = lcs_matrix_builder(file1,file2)
-    print(lcsl_matrix)
-    print(lcsl_matrix.shape)
+    print(f'{args.file1}: {lcsl_matrix.shape[0]}, {args.file2}: {lcsl_matrix.shape[1]}')
+
     out = output(lcsl_matrix,args.file1,args.file2)
-    print(out)
+
+    for line in out:
+        print(line)
 
 
 def output(lcsl,file1,file2):
@@ -32,16 +35,14 @@ def output(lcsl,file1,file2):
     i = lcsl.shape[0]-1
     j = lcsl.shape[1]-1
 
-    while i >= -1 or j >=-1:
+    while i > 0 or j >0:
         val = lcsl[i,j]
         if lcsl[i-1,j] == val-1 and lcsl[i,j-1] == val-1:
             i, j, str = match_helper(lcsl,i,j,val,file1,file2)
-            print(str)
-            outstring = [str] + outstrings
+            outstrings = [str] + outstrings
 
         else:
             i, j, str = mismatch_helper(lcsl,i,j,val,file1,file2)
-            print(str)
             outstrings = [str] + outstrings
 
     return outstrings
@@ -53,20 +54,28 @@ def match_helper(lcsl,i,j,val,file1,file2):
         val = lcsl[i-1,j]
         i-=1
         j-=1
+        if i == 0 or j == 0:
+            break
 
     lines = (print_helper(i,end[0]),print_helper(j,end[1]))
-    str = 'Match:    {}:{: <15}  {}:{: <15}'.format(file1,lines[0],file2,lines[1])
+    str = 'Match:         {}: {: <15}  {}: {: <15}'.format(file1,lines[0],file2,lines[1])
     return i, j, str
 
 
 def mismatch_helper(lcsl,i,j,val,file1,file2):
     end = (i,j)
-    while lcsl[i-1,j] == val:
+    while i > 0 and lcsl[i-1,j] == val:
         i-=1
-        while lcsl[i,j-1] == val:
-            j-=1
+        if i == 0:
+            break
+
+    while j > 0 and lcsl[i,j-1] == val:
+        j-=1
+        if j == 0:
+            break
+
     lines = (print_helper(i,end[0]),print_helper(j,end[1]))
-    str = 'Mismatch: {}:{: <15}  {}:{: <15}'.format(file1,lines[0],file2,lines[1])
+    str = 'Mismatch:      {}: {: <15}  {}: {: <15}'.format(file1,lines[0],file2,lines[1])
     return i, j, str
 
 
@@ -74,7 +83,10 @@ def print_helper(start,end):
     if start == end:
         return 'None'
     else:
-        return f'<{start+2} .. {end+1}>'
+        if start == 0:
+            return f'<{start+1} .. {end+1}>'
+        else:
+            return f'<{start+2} .. {end+1}>'
 
 
 def lcs_matrix_builder(list1,list2):
