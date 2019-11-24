@@ -8,7 +8,7 @@ I certify that this submission contains my own work, except as noted.
 import argparse
 import numpy as np
 from os.path import join
-#np.set_printoptions(threshold=np.inf)
+
 
 def main():
     """executes encoding given user specifications."""
