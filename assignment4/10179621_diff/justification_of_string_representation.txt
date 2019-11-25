@@ -1,0 +1,7 @@
+The method i used to represent strings by integers is a polynomial rolling hash
+function. I chose to do this because it is a robust way to compute a hash of a
+string with a probability of collision close to 1/m since m is a prime. becaue
+choice of m is fairly large (i.e. 10^9+7) this gives a very small probabiliity
+of collision. because this modulo is small enough we can preform this hash
+efficiently with only 64 bit integers. additionally this allows us to save the
+value in a single integer regardless of how long the string is.

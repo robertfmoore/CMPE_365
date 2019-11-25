@@ -1,0 +1,41 @@
+$ python3 diff.py -p data -f1 Three_Bears.v2.txt -f2 Three_Bears.v1.txt > outputs/Three_Bears_comparison
+
+Three_Bears.v2.txt: 129, Three_Bears.v1.txt: 130
+
+Match:         Three_Bears.v2.txt: <1 .. 15>        Three_Bears.v1.txt: <1 .. 15>
+Mismatch:      Three_Bears.v2.txt: <16 .. 19>       Three_Bears.v1.txt: <16 .. 18>
+Match:         Three_Bears.v2.txt: <20 .. 20>       Three_Bears.v1.txt: <19 .. 19>
+Mismatch:      Three_Bears.v2.txt: <21 .. 21>       Three_Bears.v1.txt: <20 .. 20>
+Match:         Three_Bears.v2.txt: <22 .. 22>       Three_Bears.v1.txt: <21 .. 21>
+Mismatch:      Three_Bears.v2.txt: <23 .. 23>       Three_Bears.v1.txt: <22 .. 22>
+Match:         Three_Bears.v2.txt: <24 .. 25>       Three_Bears.v1.txt: <23 .. 24>
+Mismatch:      Three_Bears.v2.txt: <26 .. 26>       Three_Bears.v1.txt: <25 .. 25>
+Match:         Three_Bears.v2.txt: <27 .. 32>       Three_Bears.v1.txt: <26 .. 31>
+Mismatch:      Three_Bears.v2.txt: <33 .. 33>       Three_Bears.v1.txt: <32 .. 32>
+Match:         Three_Bears.v2.txt: <34 .. 35>       Three_Bears.v1.txt: <33 .. 34>
+Mismatch:      Three_Bears.v2.txt: <36 .. 37>       Three_Bears.v1.txt: <35 .. 35>
+Match:         Three_Bears.v2.txt: <38 .. 41>       Three_Bears.v1.txt: <36 .. 39>
+Mismatch:      Three_Bears.v2.txt: <42 .. 43>       Three_Bears.v1.txt: <40 .. 41>
+Match:         Three_Bears.v2.txt: <44 .. 44>       Three_Bears.v1.txt: <42 .. 42>
+Mismatch:      Three_Bears.v2.txt: <45 .. 45>       Three_Bears.v1.txt: <43 .. 43>
+Match:         Three_Bears.v2.txt: <46 .. 53>       Three_Bears.v1.txt: <44 .. 51>
+Mismatch:      Three_Bears.v2.txt: <54 .. 54>       Three_Bears.v1.txt: <52 .. 52>
+Match:         Three_Bears.v2.txt: <55 .. 60>       Three_Bears.v1.txt: <53 .. 58>
+Mismatch:      Three_Bears.v2.txt: <61 .. 61>       Three_Bears.v1.txt: <59 .. 59>
+Match:         Three_Bears.v2.txt: <62 .. 74>       Three_Bears.v1.txt: <60 .. 72>
+Mismatch:      Three_Bears.v2.txt: <75 .. 76>       Three_Bears.v1.txt: <73 .. 74>
+Match:         Three_Bears.v2.txt: <77 .. 82>       Three_Bears.v1.txt: <75 .. 80>
+Mismatch:      Three_Bears.v2.txt: <83 .. 83>       Three_Bears.v1.txt: <81 .. 81>
+Match:         Three_Bears.v2.txt: <84 .. 88>       Three_Bears.v1.txt: <82 .. 86>
+Mismatch:      Three_Bears.v2.txt: None             Three_Bears.v1.txt: <87 .. 88>
+Match:         Three_Bears.v2.txt: <89 .. 93>       Three_Bears.v1.txt: <89 .. 93>
+Mismatch:      Three_Bears.v2.txt: <94 .. 94>       Three_Bears.v1.txt: <94 .. 94>
+Match:         Three_Bears.v2.txt: <95 .. 100>      Three_Bears.v1.txt: <95 .. 100>
+Mismatch:      Three_Bears.v2.txt: <101 .. 101>     Three_Bears.v1.txt: <101 .. 101>
+Match:         Three_Bears.v2.txt: <102 .. 108>     Three_Bears.v1.txt: <102 .. 108>
+Mismatch:      Three_Bears.v2.txt: <109 .. 109>     Three_Bears.v1.txt: <109 .. 109>
+Match:         Three_Bears.v2.txt: <110 .. 115>     Three_Bears.v1.txt: <110 .. 115>
+Mismatch:      Three_Bears.v2.txt: <116 .. 116>     Three_Bears.v1.txt: <116 .. 116>
+Match:         Three_Bears.v2.txt: <117 .. 124>     Three_Bears.v1.txt: <117 .. 124>
+Mismatch:      Three_Bears.v2.txt: <125 .. 127>     Three_Bears.v1.txt: <125 .. 128>
+Match:         Three_Bears.v2.txt: <128 .. 129>     Three_Bears.v1.txt: <129 .. 130>
